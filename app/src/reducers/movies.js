@@ -34,7 +34,7 @@ export default function moviesData(state = initialState, {payload, type}) {
       return {
         ...state,
         filteredMovies: defaultMovies.map(value => {
-          if(value.lead_actor.indexOf(payload.data) !== -1){
+          if(value.lead_actor.toLowerCase().indexOf(payload.data.toLowerCase()) !== -1){
             value.show = true;
           }
           return value
@@ -49,7 +49,7 @@ export default function moviesData(state = initialState, {payload, type}) {
       return {
         ...state,
         filteredMovies: defaultMovies.map(value => {
-          if(value.producer.indexOf(payload.data) !== -1){
+          if(value.producer.toLowerCase().indexOf(payload.data.toLowerCase()) !== -1){
             value.show = true;
           }
           return value
